@@ -1,2 +1,1 @@
-# superM
-my first repository
+# My linux dot files
