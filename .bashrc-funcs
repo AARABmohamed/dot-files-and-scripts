@@ -1,0 +1,28 @@
+# My bash functions
+
+########### OpenVPN helper functions ##############
+
+myip () {
+        my_ip=$(wget -qO- ifconfig.me)
+        echo $my_ip
+        geoiplookup $my_ip
+}
+
+ovpn-show-log () {
+        journalctl -xefu openvpn-client@$1.service
+}
+
+ovpn-start () {
+        systemctl start openvpn-client@$1
+}
+
+ovpn-stop () {
+        systemctl stop openvpn-client@$1
+}
+
+ovpn-restart () {
+        systemctl restart openvpn-client@$1
+}
+
+################################################
+
